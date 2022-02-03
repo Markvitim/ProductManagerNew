@@ -40,6 +40,10 @@ public class Product {
         this.price = price;
     }
 
+    public boolean matches(String search) {
+        return this.name.contains(search);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

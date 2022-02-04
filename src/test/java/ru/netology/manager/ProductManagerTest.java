@@ -7,8 +7,6 @@ import ru.netology.domain.Book;
 import ru.netology.domain.Product;
 import ru.netology.domain.Smartphone;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ProductManagerTest {
     private ProductManager manager = new ProductManager();
     private Book coreJava = new Book();
@@ -59,7 +57,4 @@ class ProductManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
-    @Test
-    void matches() {
-    }
 }

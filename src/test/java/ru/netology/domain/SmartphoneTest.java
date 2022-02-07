@@ -6,14 +6,24 @@ import org.junit.jupiter.api.Test;
 class SmartphoneTest {
 
     @Test
-    void matchesName() {
+    void matchesNameTrue() {
         Smartphone smartphone = new Smartphone(0, "DDD", 1000, "KING");
-        Assertions.assertEquals(true, smartphone.matches("DDD"));
+        Assertions.assertTrue(smartphone.matches("DDD"));
+    }
+    @Test
+    void matchesNameFalse() {
+        Smartphone smartphone = new Smartphone(0, "DDD", 1000, "KING");
+        Assertions.assertFalse(smartphone.matches("DVD"));
     }
 
     @Test
-    void matchesManufacturer() {
+    void matchesManufacturerTrue() {
         Smartphone smartphone = new Smartphone(0, "DDD", 1000, "KING");
-        Assertions.assertEquals(false, smartphone.matches("KINGG"));
+        Assertions.assertTrue(smartphone.matches("KING"));
+    }
+    @Test
+    void matchesManufacturerFalse() {
+        Smartphone smartphone = new Smartphone(0, "DDD", 1000, "KING");
+        Assertions.assertFalse(smartphone.matches("KONG"));
     }
 }

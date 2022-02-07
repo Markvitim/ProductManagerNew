@@ -13,19 +13,26 @@ class BookTest {
 
 
     @Test
-    void matchesAuthor() {
-        Book book = new Book();
-        book.setId(0);
-        book.setName("JJJ");
-        book.setPrice(200);
-        book.setAuthor("Petrov");
-        book.matches("Petrov");
-        Assertions.assertTrue(true);
+    void matchesAuthorTrue() {
+        Book book = new Book(0, "JJJ", 200, "Petrov");
+        Assertions.assertTrue(book.matches("Petrov"));
+    }
+    @Test
+    void matchesAuthorFalse() {
+        Book book = new Book(0, "JJJ", 200, "Petrov");
+        Assertions.assertFalse(book.matches("Petrovv"));
     }
 
     @Test
-    void matchesName() {
+    void matchesNameTrue() {
         Book book = new Book(0, "JJJ", 200, "Petrov");
-        Assertions.assertEquals(false, book.matches("FGV"));
+        Assertions.assertTrue(book.matches("JJJ"));
     }
+    @Test
+    void matchesNameFalse() {
+        Book book = new Book(0, "JJJ", 200, "Petrov");
+        Assertions.assertFalse(book.matches("JVJ"));
+    }
+
+
 }
